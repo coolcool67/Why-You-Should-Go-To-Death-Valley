@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Visit Death Valley?</title>
+  <style>
+    :root {
+      --cream: #fff5e5;
+      --muted: #e4d1bd;
+      --sand: #f3c27f;
+      --panel: rgba(91, 57, 39, .62);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--cream);
+      font: 16px/1.6 system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse at 12% 18%, rgba(205, 112, 62, .28), transparent 35%),
+        radial-gradient(ellipse at 88% 55%, rgba(174, 91, 49, .2), transparent 40%),
+        linear-gradient(180deg, #38251e, #2b201b 48%, #493020);
+      background-attachment: fixed;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: end;
+      padding: clamp(2rem, 8vw, 7rem);
+      background:
+        linear-gradient(90deg, rgba(24, 17, 15, .76), rgba(24, 17, 15, .12)),
+        linear-gradient(0deg, rgba(24, 17, 15, .72), transparent 75%),
+        url("https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2000&q=85")
+        center / cover,
+        linear-gradient(135deg, #b97543, #553326 60%, #28201d);
+    }
+
+    .hero-content { max-width: 760px; }
+
+    .eyebrow {
+      color: var(--sand);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+
+    h1 {
+      margin: .5rem 0 1rem;
+      font-size: clamp(3.2rem, 10vw, 7rem);
+      line-height: .95;
+      letter-spacing: -.04em;
+    }
+
+    .hero p { max-width: 590px; font-size: 1.15rem; }
+
+    .button {
+      display: inline-block;
+      margin-top: .8rem;
+      padding: .8rem 1.2rem;
+      border-radius: 999px;
+      background: var(--sand);
+      color: #281b15;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .button:hover { background: #ffdda9; }
+
+    main { max-width: 1120px; margin: auto; padding: 4rem 1.4rem; }
+
+    .intro, .facts-heading {
+      max-width: 750px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    h2 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; }
+    .intro p, .reason p, .fact-card p, .safety p, .safety li { color: var(--muted); }
+
+    .reasons, .facts-grid, .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .reason, .fact-card, .photo-card, .safety {
+      border: 1px solid rgba(255, 220, 180, .17);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: inset 0 1px rgba(255,255,255,.05);
+    }
+
+    .reason, .fact-card { padding: 1.4rem; }
+
+    .reason .number {
+      color: var(--sand);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .reason h3, .fact-card h3 { margin: .5rem 0; }
+
+    .facts-section { margin-top: 4rem; }
+
+    .fact-icon { display: block; font-size: 1.5rem; }
+    .fact-number {
+      display: block;
+      color: var(--sand);
+      font: 700 1.8rem/1.2 Georgia, serif;
+    }
+
+    .fact-card p { margin-bottom: 0; }
+
+    .gallery { margin-top: 4rem; }
+
+    .photo-card { overflow: hidden; margin: 0; }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: linear-gradient(145deg, #c6824b, #63402f 65%, #30231d);
+    }
+
+    .photo-card figcaption {
+      padding: .8rem 1rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .safety {
+      margin-top: 4rem;
+      padding: clamp(1.4rem, 4vw, 2.4rem);
+      background: linear-gradient(135deg, rgba(113, 64, 42, .82), rgba(65, 43, 33, .85));
+    }
+
+    .safety li { margin: .45rem 0; }
+
+    .safety a, footer a { color: var(--sand); }
+
+    footer {
+      padding: 2rem 1rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .reasons, .facts-grid, .gallery { grid-template-columns: 1fr 1fr; }
+      .hero { min-height: 72vh; }
+    }
+
+    @media (max-width: 520px) {
+      .reasons, .facts-grid, .gallery { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">California · The great outdoors</div>
+      <h1>Go where the earth feels endless.</h1>
+      <p>Explore vast horizons, sculpted dunes, colorful hills, and starry desert skies.</p>
+      <a class="button" href="#reasons">Discover Death Valley</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" id="reasons">
+      <div class="eyebrow">A landscape unlike anywhere else</div>
+      <h2>Why make the journey?</h2>
+      <p>Slow down, watch the mountains change color in the evening light, and experience one of America’s most extraordinary desert landscapes.</p>
+    </section>
+
+    <section class="reasons" aria-label="Reasons to visit">
+      <article class="reason">
+        <div class="number">01 / THE VIEWS</div>
+        <h3>Huge, dramatic landscapes</h3>
+        <p>Salt flats, mountains, dunes, and colorful badlands make every drive feel like a new scene.</p>
+      </article>
+      <article class="reason">
+        <div class="number">02 / THE WONDER</div>
+        <h3>Stand below sea level</h3>
+        <p>Badwater Basin’s salt flats offer a striking view of the park’s lowest point.</p>
+      </article>
+      <article class="reason">
+        <div class="number">03 / THE NIGHT SKY</div>
+        <h3>Look up at the stars</h3>
+        <p>Far from city lights, the desert night sky can be a highlight of your visit.</p>
+      </article>
+      <article class="reason">
+        <div class="number">04 / THE ADVENTURE</div>
+        <h3>Explore your way</h3>
+        <p>Take a scenic drive, visit a viewpoint, or choose a hike suited to the weather and your group.</p>
+      </article>
+      <article class="reason">
+        <div class="number">05 / THE QUIET</div>
+        <h3>Find room to breathe</h3>
+        <p>The wide-open desert can make everyday noise feel very far away.</p>
+      </article>
+      <article class="reason">
+        <div class="number">06 / THE MEMORIES</div>
+        <h3>Bring home a story</h3>
+        <p>Few places combine such vivid scenery with such a powerful sense of space.</p>
+      </article>
+    </section>
+
+    <section class="facts-section" aria-labelledby="facts-title">
+      <div class="facts-heading">
+        <div class="eyebrow">Desert trivia</div>
+        <h2 id="facts-title">Amazing Death Valley facts</h2>
+        <p>A landscape of record-setting extremes and surprising details.</p>
+      </div>
+
+      <div class="facts-grid">
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">🏜️</span>
+          <span class="fact-number">3.4 million</span>
+          <h3>Acres of parkland</h3>
+          <p>It’s the largest national park in the contiguous United States.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">⬇️</span>
+          <span class="fact-number">−282 ft</span>
+          <h3>North America’s low point</h3>
+          <p>Badwater Basin lies below sea level.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">⛰️</span>
+          <span class="fact-number">11,049 ft</span>
+          <h3>Telescope Peak</h3>
+          <p>The park’s highest point rises above the desert basin.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">🌡️</span>
+          <span class="fact-number">134°F</span>
+          <h3>Record temperature</h3>
+          <p>The National Park Service reports this Furnace Creek reading from July 1913.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">📅</span>
+          <span class="fact-number">1994</span>
+          <h3>National park since</h3>
+          <p>Death Valley was designated a national park in 1994.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">🌌</span>
+          <span class="fact-number">Dark skies</span>
+          <h3>Great for stargazing</h3>
+          <p>Remote parts of the park offer dark skies for star watching.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">🪨</span>
+          <span class="fact-number">Moving rocks</span>
+          <h3>Racetrack Playa</h3>
+          <p>Rocks have left long trails across this dry lakebed.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">🎨</span>
+          <span class="fact-number">Artist’s Palette</span>
+          <h3>Colorful hills</h3>
+          <p>Minerals create vivid colors across the hillsides.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-icon" aria-hidden="true">🌼</span>
+          <span class="fact-number">Wildflowers</span>
+          <h3>A desert surprise</h3>
+          <p>When conditions are right, seasonal blooms brighten the landscape.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Death Valley photo gallery">
+      <figure class="photo-card">
+        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=80" alt="Golden desert dunes">
+        <figcaption>Desert dunes in warm evening light</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80" alt="Expansive arid landscape">
+        <figcaption>Wide-open desert scenery</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=80" alt="Mountain landscape in golden light">
+        <figcaption>Mountains and desert light</figcaption>
+      </figure>
+    </section>
+
+    <section class="safety" aria-labelledby="safety-title">
+      <div class="eyebrow">Explore smart</div>
+      <h2 id="safety-title">Enjoy Death Valley safely—with a plan.</h2>
+      <p>Many people visit safely, but extreme heat and remote conditions can be dangerous. Prepare before you go, follow park guidance, and change your plans if conditions become unsafe.</p>
+      <ul>
+        <li>Check the weather, road conditions, and park alerts before leaving.</li>
+        <li>Carry plenty of water and avoid strenuous activity in extreme heat.</li>
+        <li>Tell someone your plans, and don’t rely on cell service.</li>
+        <li>Turn back if you or anyone in your group feels unwell.</li>
+      </ul>
+      <a class="button" href="https://www.nps.gov/deva/planyourvisit/index.htm" target="_blank" rel="noopener noreferrer">
+        Read visitor guidance
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Big views. Quiet moments. A desert worth planning for.</p>
+    <a href="https://www.nps.gov/deva/" target="_blank" rel="noopener noreferrer">Official Death Valley National Park site</a>
+  </footer>
+</body>
+</html>
